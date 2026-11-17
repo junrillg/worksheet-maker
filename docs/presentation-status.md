@@ -1,6 +1,6 @@
 # Presentation verification record
 
-Prepared 2026-11-17 for Worksheet Maker 1.2.2. Scope: publish the existing skill and consistent plugin metadata with a clear GitHub entry point, original identity assets, source-backed workflow illustration, and usage and contribution guidance. No worksheet generation run or agent installation is claimed.
+Updated 2026-11-17 for Worksheet Maker 1.3.0. Scope: publish the skill, agent installation guidance, and a required update-before-work gate with a bundled Git updater. No worksheet generation run or live agent installation is claimed.
 
 | Requirement | Status | Evidence | Next action |
 |---|---|---|---|
@@ -28,10 +28,22 @@ Prepared 2026-11-17 for Worksheet Maker 1.2.2. Scope: publish the existing skill
 
 Repository validation and presentation checks do not certify generated educational content. An actual worksheet run requires the PDF and picture review described in the skill.
 
-## Local review evidence
+## Initial publication review evidence
 
-An independent source review found no material issues. The skill matches the selected installed 1.2.2 source byte for byte (SHA-256 `2b828cfe8b8b7fd346c1cf345dfd5f23fb5829b247354fa1521f9a480f328fde`). Metadata copy was aligned with exact reproduction defaults; the skill behavior was not changed. The validator checks repository structure and selected contracts, not a complete plugin-schema conformance test or PDF output.
+An independent source review found no material issues. At initial publication, the skill matched the selected installed 1.2.2 source byte for byte (SHA-256 `2b828cfe8b8b7fd346c1cf345dfd5f23fb5829b247354fa1521f9a480f328fde`). Metadata copy was aligned with exact reproduction defaults; the original publication did not change skill behavior. Version 1.3.0 subsequently adds the required update gate and helper. The validator checks repository structure and selected contracts, not a complete plugin-schema conformance test or PDF output.
 
-## Publication evidence
+## Initial publication evidence
 
-The initial content commit is `042bf1b30bf6268dfda0512ebf697a312c1d1476`. GitHub Actions [Validate repository run 1](https://github.com/junrillg/worksheet-maker/actions/runs/44005512850) passed on that commit. Public visibility, `main`, the committed files, README image loading and live navigation were observed on GitHub. This record update changes documentation only. No license, release, plugin installation or hosted application was created. The installed plugin cache was left unchanged.
+The initial content commit is `042bf1b30bf6268dfda0512ebf697a312c1d1476`. GitHub Actions [Validate repository run 1](https://github.com/junrillg/worksheet-maker/actions/runs/44005512850) passed on that commit. Public visibility, `main`, the committed files, README image loading and live navigation were observed on GitHub. That record update changed documentation only. No license, release, plugin installation or hosted application was created. The installed plugin cache was left unchanged.
+
+## Version 1.3.0 implementation and checks
+
+| Requirement | Status | Evidence / next action |
+|---|---|---|
+| Agent installation | Implemented | README links to a copyable agent prompt and `docs/installation.md`, with host-specific local discovery paths and managed-install limitations. No actual host installation is claimed. |
+| Update before worksheet work | Implemented | `SKILL.md` places the mandatory update gate immediately after help; help still stops without tools or network. |
+| Git updater | Verified offline | 14 integration tests passed: up-to-date, fast-forward, dirty/untracked/ignored changes, wrong origin/branch, detached HEAD, ahead/diverged history, fetch failure, disabled hooks, help without Git, and symlink resolution. |
+| Package consistency | Verified locally | Both manifests, skill and README use 1.3.0; repository validator passed and CI includes the offline updater tests. |
+| Managed installations | Explicit limitation | Requires the host update mechanism and verification of active installed files. Existing 1.2.2 packages need an initial update to receive the new gate. The installed plugin cache is not edited by this repository change. |
+
+A separate material review found no blocking issues in the update gate, helper or installation instructions. A fresh help invocation returned usage only. The production diagram was relabeled to make its position after the required update gate clear and its export was visually inspected. Installation paths and symlink support were checked against the current official Codex and Claude Code documentation linked in the installation guide. Live installation, actual GitHub network fetching by the helper, and managed-plugin upgrading were not exercised in this environment.

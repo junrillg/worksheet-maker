@@ -10,6 +10,12 @@ Use Worksheet Maker: worksheet-maker help
 
 `help`, `--help`, and `-h` are case-insensitive when used as the first argument. This path prints usage and stops without inspecting attachments, running tools, accessing the network, or writing files.
 
+## Updates before worksheet work
+
+On every non-help request, check for updates before inspecting source pages or generating content. A managed local Git installation runs `scripts/update.py` from the resolved skill directory; an app-managed plugin uses its supported update mechanism. Install an available update first, then read the updated `SKILL.md` before continuing. Check once per invocation; the next worksheet request checks again.
+
+If the check or update fails, stop and explain the recovery step. Continue with the current version only if the user explicitly requests that fallback. Do not overwrite local changes or patch a managed plugin cache. See [installation and update recovery](installation.md).
+
 ## Choose the content mode
 
 | Request | Mode and expected behavior |
@@ -54,7 +60,7 @@ The workflow requires an inventory and coverage checklist, individual picture re
 
 ## Required capabilities and limits
 
-Use an agent with attachment inspection, PDF generation and rendering, illustration tools, and a PDF workflow. PyMuPDF is required for the specified geometry and text checks. No model, PDF engine, image generator, or dependency installer is bundled with this repository.
+Use an agent with attachment inspection, PDF generation and rendering, illustration tools, and a PDF workflow. PyMuPDF is required for the specified geometry and text checks. No model, PDF engine, image generator, or dependency installer is bundled with this repository. The bundled updater requires Git, Python 3.9+, network access, and a managed Git checkout; it does not install PDF or image dependencies.
 
 If a required tool is unavailable, the agent must report the missing capability. If an essential subject, level, topic, or source passage cannot be inferred, it asks a targeted question. Do not treat a generated PDF or a passing repository check as proof that every picture and answer is correct.
 

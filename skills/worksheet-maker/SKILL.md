@@ -30,6 +30,8 @@ Arguments:
 Defaults: A4 portrait, crisp monochrome illustrations where source tasks use pictures,
 the exact supplied questions, order, and format, complete source coverage,
 and separate student and answer-key PDFs.
+Before non-help work: check the canonical upstream and apply available skill updates;
+then reread the current skill. Help skips all update checks.
 Opt-in: explicitly request new/adapted questions, combined PDFs, randomized sets, or editable sources.
 
 Examples:
@@ -42,10 +44,23 @@ Clarification: asks one short question only if an essential subject, topic,
 difficulty, source reading, or other detail cannot be inferred. Report unavailable
 required image/PDF tools; never claim files or checks were completed when they were not.
 
-Internal pointers: Inventory the entire source set; Create a coverage matrix;
+Internal pointers: Required update check; scripts/update.py; Inventory the entire source set;
+Create a coverage matrix;
 Design the printable pages; Illustrate accurately; Render, inspect, and deliver;
 Version 1.2 quality safeguards (required).
 ```
+
+## Required update check — before every non-help run
+
+Canonical upstream: **https://github.com/junrillg/worksheet-maker**, branch **main**. Check only this skill, not every skill installed in the host. Complete this gate before inspecting source attachments or generating worksheet content. The help path above always takes precedence and does not read files or access the network.
+
+1. Resolve the active `SKILL.md` to its real installation path; do not infer it from the working directory. Determine whether it belongs to an owner-controlled Git checkout, a managed plugin/personal-skill registry, or a copied/uploaded package. Follow the host's supported installation and update mechanism; never edit a plugin cache, a synced provider directory, or an unrelated repository.
+2. **Git-linked installation:** Run `python3 <real-skill-directory>/scripts/update.py` once for this invocation. The bundled [update helper](scripts/update.py) checks the canonical origin and `main`, refuses local changes and local-only history, fetches upstream, and applies available updates by fast-forward only. It never stashes, resets, force-pulls, or installs dependencies. Treat a nonzero exit as an incomplete update check; do not proceed with worksheet work.
+3. **Managed plugin or registry installation:** Check the canonical upstream version and revision through available GitHub/network tools. Compare the active package version with upstream `plugin.json` and, when version identifiers match, compare the packaged skill contents (including bundled scripts), or use the provider's recorded source revision. If newer or different, use the host's supported update/reinstall mechanism and verify the active installed files now match that revision. Do not claim that fetching upstream text updated a managed installation. If its source revision/content or update capability cannot be verified, report the blocker and stop before worksheet work.
+4. **Copied/uploaded or missing-updater installation:** Check upstream through the available approved tools, then use the host's supported installer to install the latest complete skill folder, including its scripts, or migrate to the Git-linked setup described in the [installation guide](https://github.com/junrillg/worksheet-maker/blob/main/docs/installation.md). Preserve existing customizations; never overwrite a conflicting installation silently. Verify the active skill path and revision after installation. If no installer or write access is available, report that an update cannot be applied and stop.
+5. After a successful check/update, reread the active `SKILL.md` and any resources needed by the request before continuing. Retain an invocation-local “update checked” marker so rereading does not recursively trigger another update check. Start a new check for each new worksheet request. Briefly report `up to date` or `updated`, with the verified version/revision; never invent an update result.
+
+If network access, authentication, Python/Git, write permissions, a clean checkout, or the host's update mechanism is unavailable, explain the actual blocker. Proceed with the current version only if the user explicitly authorizes that fallback for the current request; elapsed time is not authorization. Do not ask for a new approval when the user's existing instructions already authorize the routine update. A skill is agent instructions: this gate runs when the agent follows it, not as a background service or a host-enforced hook.
 
 ## When to activate
 
@@ -62,7 +77,7 @@ When the user provides questions, treat them as the requested worksheet content,
 
 ## Version and non-negotiable illustration policy
 
-Version: **1.2.2** (2026-11-14; exact supplied questions and format by default). When the source uses pictures, **the regenerated worksheet MUST also use accurate, legible pictures**, not text-only substitutes. Treat all picture answers as correctness-critical. Follow [Image quality gate](#version-12-quality-safeguards-required) and [Picture asset workflow](#4-illustrate-accurately) before final delivery.
+Version: **1.3.0** (2026-11-17; installation guidance and required upstream update gate; exact supplied questions and format remain the default). When the source uses pictures, **the regenerated worksheet MUST also use accurate, legible pictures**, not text-only substitutes. Treat all picture answers as correctness-critical. Follow [Image quality gate](#version-12-quality-safeguards-required) and [Picture asset workflow](#4-illustrate-accurately) before final delivery.
 
 ## Default deliverables
 
@@ -160,4 +175,4 @@ Proceed with reasonable defaults if the subject, topic and difficulty are eviden
 - [Final PDF geometry, print preview, and delivery checks](#6-render-inspect-and-deliver)
 - [Mandatory six-stage image and answer safeguards](#version-12-quality-safeguards-required)
 
-This self-contained package uses the workflow above; it does not depend on external reference files, a bundled PDF-check script, or a Civics-specific example. Use the environment's available PDF and image tools. If a required capability is unavailable, explain what is missing and do not claim successful generation or verification.
+This package includes `scripts/update.py` for Git-linked installations. It does not bundle a PDF engine, a PDF-check script, or subject-specific example worksheets. Use the environment's available PDF and image tools. If a required capability is unavailable, explain what is missing and do not claim successful generation or verification.

@@ -1,15 +1,15 @@
 {
   "interface": {
     "capabilities": [],
-    "defaultPrompt": "Make printable A4 worksheets from my supplied questions, preserving their exact content, order, and format. Use checked monochrome illustrations where needed and provide separate student and answer-key PDFs. Create or adapt questions only if I explicitly request it.",
+    "defaultPrompt": "Check for and apply available Worksheet Maker updates before starting, then recreate my supplied questions as A4 worksheets with checked monochrome illustrations and separate student and answer-key PDFs. Preserve exact content and format unless I explicitly request new or adapted practice.",
     "developerName": "Junrill Galvez",
     "displayName": "Worksheet Maker",
-    "longDescription": "Recreate supplied questions and their format as printable worksheets for any school subject. Create or adapt practice only when explicitly requested. Check picture meaning, page layout, source coverage, and the final answer-key mapping.",
+    "longDescription": "Recreate supplied questions and their format as printable worksheets for any school subject, checking for and applying upstream skill updates before non-help work. Create or adapt practice only when explicitly requested. Check pictures, page layout, source coverage, and the final answer-key mapping.",
     "shortDescription": "Printable worksheet PDFs",
     "category": "Other"
   },
   "name": "worksheet-maker",
-  "version": "1.2.2",
+  "version": "1.3.0",
   "description": "Create A4 printable worksheets and separate answer keys; preserve supplied questions and format by default, with checked monochrome illustrations.",
   "author": {
     "name": "Junrill Galvez"

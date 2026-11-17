@@ -6,15 +6,16 @@
 <p align="center">An agent skill for A4 student worksheets and separate answer keys, with explicit checks for pictures, layout, and source fidelity.</p>
 <p align="center">
   <a href="#quick-start">Quick start</a> ·
+  <a href="docs/installation.md">Install &amp; update</a> ·
   <a href="docs/usage.md">Usage</a> ·
   <a href="#how-it-works">Workflow</a> ·
   <a href="CONTRIBUTING.md">Contributing</a>
 </p>
-<p align="center">Skill version 1.2.2 · Any school subject · A4 portrait by default</p>
+<p align="center">Skill version 1.3.0 · Any school subject · A4 portrait by default</p>
 
-![Source-backed workflow: source material, coverage and fidelity checks, page layout and illustrations, PDF inspection, then separate student and answer-key PDFs.](assets/workflow.svg)
+![Production after the required update gate: source material, coverage and fidelity checks, page layout and illustrations, PDF inspection, then separate student and answer-key PDFs.](assets/workflow.svg)
 
-*Workflow illustration derived from the skill instructions. It is not a generated worksheet or evidence of an executed PDF-generation run.*
+*Worksheet production stages after the required update check. This source-backed illustration is not a generated worksheet or evidence of a PDF-generation run.*
 
 ## What it does
 
@@ -31,7 +32,18 @@ Worksheet Maker guides a capable AI agent through recreating supplied questions 
 
 ## Quick start
 
-Prerequisites: Git to obtain the files, and an AI agent that can read local instructions, inspect attachments, create and render PDFs, and produce or edit illustrations. The PDF checks require PyMuPDF in the agent's execution environment and an available PDF workflow. These tools are not bundled here.
+For a reusable installation, give your agent this prompt:
+
+```text
+Install Worksheet Maker from https://github.com/junrillg/worksheet-maker.
+Read docs/installation.md and use the supported install method for this agent.
+Keep a managed checkout so worksheet runs check and install updates first.
+Preserve existing installations and local edits; report the active version and commit.
+```
+
+See [installation and automatic updates](docs/installation.md) for Codex, Claude Code, and managed-plugin guidance. The local clone below also works when you ask an agent to read the skill directly.
+
+Prerequisites: Git, Python 3.9+ for the updater, and an AI agent that can read local instructions, inspect attachments, create and render PDFs, and produce or edit illustrations. The PDF checks require PyMuPDF in the agent's execution environment and an available PDF workflow. These tools are not bundled here.
 
 ```sh
 git clone https://github.com/junrillg/worksheet-maker.git
@@ -57,7 +69,9 @@ The instructed output is a separate `Subject_Level_Worksheet.pdf` and `Subject_L
 
 ## How it works
 
-The agent reads the entire source set, maps every item or learning objective, lays out the pages, and prepares individual illustrations. It renders and inspects the PDFs, checks page geometry and source fidelity, and verifies the key against the final student PDF before delivery.
+Before each non-help worksheet request, the agent checks the canonical repository and applies available updates, then reloads the skill. Git installations use a clean `main` checkout and fast-forward updates; managed plugins use their host's supported update mechanism. If checking or updating fails, worksheet work stops unless you explicitly choose the installed version.
+
+The agent then reads the entire source set, maps every item or learning objective, lays out the pages, and prepares individual illustrations. It renders and inspects the PDFs, checks page geometry and source fidelity, and verifies the key against the final student PDF before delivery.
 
 | File | Responsibility |
 |---|---|
@@ -65,6 +79,8 @@ The agent reads the entire source set, maps every item or learning objective, la
 | [Codex plugin manifest](.codex-plugin/plugin.json) | Plugin identity and skill directory. |
 | [Plugin manifest](plugin.json) | Plugin identity and interface metadata. |
 | [Usage guide](docs/usage.md) | Prompts, expected outputs, and missing-information behavior. |
+| [Installation guide](docs/installation.md) | Agent installation prompt, supported local paths, and update recovery. |
+| [Update helper](skills/worksheet-maker/scripts/update.py) | Check the trusted repository and apply fast-forward updates for a managed Git installation. |
 
 ## Limits and verification
 

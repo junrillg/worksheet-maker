@@ -35,6 +35,12 @@ def validate(root):
     require(f'Version: **{portable["version"]}**' in skill, 'Skill/manifest version differs')
     help_at = skill.find('## Help')
     require(0 < help_at < skill.find('## When to activate'), 'Help must precede workflow')
+    update_at = skill.find('## Required update check')
+    require(help_at < update_at < skill.find('## When to activate'),
+            'Required update gate must follow help and precede worksheet work')
+    require((root / 'skills/worksheet-maker/scripts/update.py').is_file(),
+            'Bundled updater missing')
+    require((root / 'docs/installation.md').is_file(), 'Installation guide missing')
     for contract in ('--help', '-h', 'STOP', 'Exact reproduction', 'explicit opt-in',
                      'separate', 'PyMuPDF', 'six-stage'):
         require(contract in skill, f'Missing skill contract: {contract}')

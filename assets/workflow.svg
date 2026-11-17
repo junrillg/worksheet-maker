@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="600" height="800" viewBox="0 0 600 800" role="img" aria-labelledby="title desc">
-  <title id="title">Worksheet Maker instruction workflow</title>
-  <desc id="desc">Read supplied questions or a topic. Preserve exact questions by default, adapting only when requested. Typeset and illustrate, render and inspect, then deliver a student PDF and a separate answer key. This diagram describes skill instructions, not a generated worksheet sample.</desc>
+  <title id="title">Worksheet Maker production workflow</title>
+  <desc id="desc">After the required upstream-update check, read supplied questions or a topic. Preserve exact questions by default, adapting only when requested. Typeset and illustrate, render and inspect, then deliver a student PDF and a separate answer key. This diagram describes skill instructions, not a generated worksheet sample.</desc>
   <rect x="1" y="1" width="598" height="798" rx="20" fill="#F8FAFB" stroke="#CBD7DD" stroke-width="2"/>
   <g font-family="Arial, Helvetica, sans-serif" text-anchor="middle">
-    <text x="300" y="49" font-size="28" font-weight="700" fill="#142D3A">Instruction workflow</text>
-    <text x="300" y="80" font-size="19" fill="#526874">Source-backed diagram, not a worksheet sample</text>
+    <text x="300" y="49" font-size="28" font-weight="700" fill="#142D3A">Worksheet production</text>
+    <text x="300" y="80" font-size="19" fill="#526874">After the update gate; not a worksheet sample</text>
     <g fill="#FFFFFF" stroke="#CBD7DD" stroke-width="2">
       <rect x="54" y="108" width="492" height="91" rx="14"/>
       <rect x="54" y="234" width="492" height="107" rx="14"/>
