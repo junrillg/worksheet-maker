@@ -5,14 +5,14 @@ Prepared 2026-11-17 for Worksheet Maker 1.2.2. Scope: publish the existing skill
 | Requirement | Status | Evidence | Next action |
 |---|---|---|---|
 | Identity | Verified locally | README references `assets/logo.svg`; matching social assets prepared separately. | Logo inspected at 32/88 px on white and dark grounds; social PNG is 1280 × 640 and 79,403 bytes. |
-| README and claims | Implemented; source-inspected | Content modes, A4 defaults, separate PDFs, and limitations trace to `skills/worksheet-maker/SKILL.md`. | Repository validator passed; local links and common manifest metadata agree. |
-| Product evidence | Implemented as workflow illustration | `assets/workflow.svg` is explicitly labeled as an illustration of the instructions. No sample PDF or executed generation is presented. | Export inspected; source-backed workflow labels and output split are legible. |
+| README and claims | Verified against source | Content modes, A4 defaults, separate PDFs, and limitations trace to `skills/worksheet-maker/SKILL.md`. | Repository validator passed; local links and common manifest metadata agree. |
+| Product evidence | Verified as workflow illustration | `assets/workflow.svg` is explicitly labeled as an illustration of the instructions. No sample PDF or executed generation is presented. | Export inspected; source-backed workflow labels and output split are legible. |
 | First use | Source-inspected | README shows clone, agent-read instruction, and help prompt. It distinguishes prompts from shell commands and cloning from installation. | Execute help in a capable agent if behavioral evidence is needed. |
-| System explanation | Implemented; source-inspected | README maps skill, manifests, usage, and external agent tooling. | Common manifest fields and interface metadata validated. |
+| System explanation | Verified against source | README maps skill, manifests, usage, and external agent tooling. | Common manifest fields and interface metadata validated. |
 | Participation | Implemented | `CONTRIBUTING.md` documents checks and safe synthetic examples without inventing a support commitment or private reporting channel. | `python3 scripts/validate.py` and `sh -n scripts/export-assets.sh` passed. |
 | License | Owner-deferred | No license supplied; README states that public availability does not grant a reuse license. | Owner selects terms before a license is added. |
-| GitHub metadata | Repository created; content publication pending | Proposed values below; social image is an asset, not an uploaded repository preview. | Public repository created under verified `junrillg`; content publication and live README checks next. |
-| Rendering | Pending | Desktop/mobile and light/dark visual inspection has not yet been recorded. | Inspect final README and assets; record actual surfaces and widths. |
+| GitHub metadata | Published; visibility verified | Proposed values below; social image is an asset, not an uploaded repository preview. | Published to `junrillg/worksheet-maker` on `main`; GitHub displays Public and the prepared description. Topics remain suggestions; social card remains a committed asset, not an uploaded preview. |
+| Rendering | Live dark-theme checks passed; light-theme assets checked locally | GitHub README inspected at 1400 px viewport (838 px article) and 390 px viewport (309 px article). Logo and workflow load; no page overflow. Code blocks retain their normal horizontal scrolling on mobile. | Full README in GitHub light mode was not inspected; the existing account appearance was preserved. |
 
 ## Prepared GitHub metadata
 
@@ -31,3 +31,7 @@ Repository validation and presentation checks do not certify generated education
 ## Local review evidence
 
 An independent source review found no material issues. The skill matches the selected installed 1.2.2 source byte for byte (SHA-256 `2b828cfe8b8b7fd346c1cf345dfd5f23fb5829b247354fa1521f9a480f328fde`). Metadata copy was aligned with exact reproduction defaults; the skill behavior was not changed. The validator checks repository structure and selected contracts, not a complete plugin-schema conformance test or PDF output.
+
+## Publication evidence
+
+The initial content commit is `042bf1b30bf6268dfda0512ebf697a312c1d1476`. GitHub Actions [Validate repository run 1](https://github.com/junrillg/worksheet-maker/actions/runs/44005512850) passed on that commit. Public visibility, `main`, the committed files, README image loading and live navigation were observed on GitHub. This record update changes documentation only. No license, release, plugin installation or hosted application was created. The installed plugin cache was left unchanged.
