@@ -1,0 +1,10 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.env.*
+!.env.example
+# Keep user worksheets and working renders out of the source repository.
+outputs/
+tmp/

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "author": {
+    "name": "Junrill Galvez"
+  },
+  "description": "Create A4 printable worksheets and separate answer keys; preserve supplied questions and format by default, with checked monochrome illustrations.",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "capabilities": [],
+        "defaultPrompt": "Make printable A4 worksheets from my supplied questions, preserving their exact content, order, and format. Use checked monochrome illustrations where needed and provide separate student and answer-key PDFs. Create or adapt questions only if I explicitly request it.",
+        "developerName": "Junrill Galvez",
+        "displayName": "Worksheet Maker",
+        "longDescription": "Recreate supplied questions and their format as printable worksheets for any school subject. Create or adapt practice only when explicitly requested. Check picture meaning, page layout, source coverage, and the final answer-key mapping.",
+        "shortDescription": "Printable worksheet PDFs"
+      }
+    }
+  },
+  "name": "worksheet-maker",
+  "version": "1.2.2"
+}

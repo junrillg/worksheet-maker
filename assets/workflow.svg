@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="800" viewBox="0 0 600 800" role="img" aria-labelledby="title desc">
+  <title id="title">Worksheet Maker instruction workflow</title>
+  <desc id="desc">Read supplied questions or a topic. Preserve exact questions by default, adapting only when requested. Typeset and illustrate, render and inspect, then deliver a student PDF and a separate answer key. This diagram describes skill instructions, not a generated worksheet sample.</desc>
+  <rect x="1" y="1" width="598" height="798" rx="20" fill="#F8FAFB" stroke="#CBD7DD" stroke-width="2"/>
+  <g font-family="Arial, Helvetica, sans-serif" text-anchor="middle">
+    <text x="300" y="49" font-size="28" font-weight="700" fill="#142D3A">Instruction workflow</text>
+    <text x="300" y="80" font-size="19" fill="#526874">Source-backed diagram, not a worksheet sample</text>
+    <g fill="#FFFFFF" stroke="#CBD7DD" stroke-width="2">
+      <rect x="54" y="108" width="492" height="91" rx="14"/>
+      <rect x="54" y="234" width="492" height="107" rx="14"/>
+      <rect x="54" y="376" width="492" height="91" rx="14"/>
+      <rect x="54" y="502" width="492" height="91" rx="14"/>
+    </g>
+    <g fill="#142D3A" font-size="26" font-weight="700">
+      <text x="300" y="146">Read every source item</text>
+      <text x="300" y="273">Keep questions exact by default</text>
+      <text x="300" y="414">Typeset and illustrate</text>
+      <text x="300" y="540">Render, inspect, and verify</text>
+    </g>
+    <g fill="#526874" font-size="21">
+      <text x="300" y="177">Text, photos, PDFs, or a requested topic</text>
+      <text x="300" y="306">Create or adapt only when requested</text>
+      <text x="300" y="445">A4 pages and recognizable picture choices</text>
+      <text x="300" y="571">Page geometry, picture meaning, key alignment</text>
+    </g>
+    <g fill="#137F7B">
+      <path d="M298 200h4v19h6l-8 9-8-9h6Zm0 142h4v19h6l-8 9-8-9h6Zm0 126h4v19h6l-8 9-8-9h6Z"/>
+      <path d="M298 594h4v22h131v17h6l-8 9-8-9h6v-13H171v13h6l-8 9-8-9h6v-17h131Z"/>
+    </g>
+    <rect x="54" y="649" width="230" height="84" rx="14" fill="#142D3A"/>
+    <rect x="316" y="649" width="230" height="84" rx="14" fill="#142D3A"/>
+    <text x="169" y="684" font-size="24" font-weight="700" fill="#FFFFFF">Student PDF</text>
+    <text x="431" y="684" font-size="24" font-weight="700" fill="#FFFFFF">Answer key PDF</text>
+    <text x="169" y="714" font-size="19" fill="#DDE8EB">Ready to print</text>
+    <text x="431" y="714" font-size="19" fill="#DDE8EB">Kept separate</text>
+    <text x="300" y="771" font-size="19" fill="#526874">The agent performs these checks using available tools.</text>
+  </g>
+</svg>
